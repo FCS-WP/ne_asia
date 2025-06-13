@@ -1,0 +1,21 @@
+#header{
+    min-height: 80px;
+    .e-search-form{
+        position: relative;
+        input{
+            width: 300px;
+            background: #F7F9FA;
+            border: none;
+            font-size: 14px;
+        }
+        button{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            svg{
+                width: 15px;
+            }
+        }
+    }
+}
