@@ -1,9 +1,55 @@
+@mixin title_deco{
+    &::before{
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        right: -10px;
+        border: solid var( --e-global-color-2f11e8c );
+        border-width: 2px 2px 0 0;
+        height: 30px;
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: -10px;
+        right: 20px;
+        border: solid var( --e-global-color-2f11e8c );
+        border-width: 0 0 2px 2px;
+        height: 30px;
+    }
+}
+
+@mixin quote_deco{
+    &:before{
+            content: "";
+            position: absolute;
+            top: -16px;
+            left: -12px;
+            width: 17px;
+            height: 12px;
+            background: url("/wp-content/uploads/2025/06/quote.webp");
+            background-size: cover;
+        }
+        &:after{
+            content: "";
+            position: absolute;
+            bottom: -16px;
+            right: -12px;
+            width: 17px;
+            height: 12px;
+            background: url("/wp-content/uploads/2025/06/quote_close.webp");
+            background-size: cover;
+        }
+}
 #header{
     min-height: 80px;
     .e-search-form{
         position: relative;
         input{
             width: 300px;
+            max-width: 100%;
             background: #F7F9FA;
             border: none;
             font-size: 14px;
@@ -15,6 +61,201 @@
             right: 0;
             svg{
                 width: 15px;
+            }
+        }
+    }
+    .elementor-nav-menu--dropdown{
+        background: #fff;
+        ul{
+            background: #fff;
+            li{
+                &.current-menu-item{
+                    a{
+                        color: var( --e-global-color-2f11e8c )
+                    }
+                }
+            }
+        }
+    }
+    .elementor-menu-cart--items-indicator-bubble .elementor-menu-cart__toggle .elementor-button-icon .elementor-button-icon-qty[data-counter]{
+        top: 0;
+    }
+}
+
+#why_choose_us, #about_us{
+    .elementor-image-box-img{
+        @media (max-width: 767px) {
+            margin-top: 15px;
+            display: block;
+        }
+    }
+    .elementor-image-box-content{
+        position: relative;
+        display: inline-block;
+        width: auto;
+        @include title_deco;
+        h3{
+            @include quote_deco;
+            
+        }
+    }
+}
+
+#testimonials{
+    position: relative;
+    &:before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("/wp-content/uploads/2025/06/BG-Worldmap-e1659806952287.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        filter: brightness(100%) contrast(100%) saturate(0%) blur(0px) hue-rotate(0deg);
+        opacity: 0.5;
+    }
+    .elementor-testimonial{
+        padding: 20px;
+        .elementor-testimonial__cite{
+            .elementor-star-rating{
+                order: 1;
+            }
+            .elementor-testimonial__name{
+                order: 2
+            }
+            .elementor-testimonial__title{
+                order: 3
+            }
+        }
+    }
+}
+
+.product_list{
+    ul{
+        &.products{
+            li{
+                background: white;
+                padding: 15px 15px 25px !important;
+                a.woocommerce-loop-product__link{
+                    text-align: left;
+                    img{
+                        margin: 0 !important;
+                    }
+                }
+                .add_to_cart_button{
+                }
+            }
+        }
+    }
+}
+
+
+#custom_footer{
+    .elementor-widget-icon-list{
+        ul{
+            li{
+                a{
+                    display: inline;
+                }
+            }
+        }
+    }
+}
+
+#product_page{
+    .elementor-widget-jkit_product_grid{
+        ul{
+            padding-top: 50px;
+            li{
+                text-align: center;
+                h2, span.price{
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+
+.tp_title{
+    .heading-section-subtitle{
+        display: inline-block;
+        border: 1px solid var( --e-global-color-2f11e8c );
+        padding: 5px 8px;
+    }
+}
+
+.border_deco{
+    position: relative;
+    @include title_deco;
+    .elementor-widget-container{
+        position: relative;
+        @include quote_deco;
+    }
+}
+
+#contact_form{
+    form{
+        label{
+            width: 100%;
+            max-width: 100%;
+            span{
+                padding-top: 10px;
+            }
+        }
+        .submit_button{
+            text-align: center;
+            input{
+                width: 100%;
+            }
+        }
+    }
+}
+
+.ppocta-ft-fix{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    > a{
+        display: block;
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+        text-align: center;
+        border: 1px solid #000;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s all ease;
+        + a{
+            margin-top: 15px;
+        }
+        &:hover{
+            background: var( --e-global-color-6e51427 );
+            border-color: var( --e-global-color-6e51427 );
+        }
+        svg{
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+.elementor-menu-cart__main{
+    .elementor-menu-cart__footer-buttons{
+        a{
+            line-height: 25px !important;
+            padding: 10px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            span{
+                font-size: 15px;
+                line-height: 25px;
             }
         }
     }
