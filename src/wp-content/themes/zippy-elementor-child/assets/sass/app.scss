@@ -260,3 +260,41 @@
         }
     }
 }
+
+
+#order_review a.button.alt,
+#order_review button.button.alt {
+  background: var( --e-global-color-6e51427 ) !important;
+}
+
+#order_review form .form-row input.input-text,
+#order_review form .form-row textarea {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+#order_review form .form-row label {
+  color: #000000;
+}
+#order_review table.shop_table th {
+  color: #000000;
+}
+#order_review table.shop_table td {
+  color: #333333;
+}
+
+#order_review{
+    .woocommerce-info{
+        border-color: var( --e-global-color-2f11e8c );
+        &:before{
+            color: var( --e-global-color-2f11e8c )
+        }
+    }
+}
+
+.woocommerce-cart{
+    .wc-proceed-to-checkout{
+        a.button{
+            background: var( --e-global-color-6e51427 ) !important;
+        }
+    }
+}
